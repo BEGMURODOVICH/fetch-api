@@ -15,6 +15,5 @@ fetch("https://jsonplaceholder.typicode.com/todos")
       cardList.appendChild(li);
     });
   })
-  .catch((error) => {
-    console.log(error);
-  });
+  .catch((error) => console.log("Xato yuz berdi:", error))
+  .finally(() => console.log("So'rov yakunlandi"));
