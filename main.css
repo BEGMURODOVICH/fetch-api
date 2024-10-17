@@ -1,69 +1,95 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Roboto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f0f0f5;
 }
 
 .container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 50px 30px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px 30px;
 }
+
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .user_info {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
 }
+
 .user_info li {
-  box-shadow:0px 5px 15px black;
-  border: 2px solid black;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 200px;
-  height: 200px;
-  overflow-y: auto;
-
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 200px;
+    overflow: auto;
 }
+
+.user_info li:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
 .user_info li img {
-  width: 80px;
-}
-.user_info .user_cardTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.status {text-transform: capitalize;
-  background-color: blue;
-  padding: 5px 10px;
-  border-radius: 10px;
-  color: white;
-}
-.user_id {
-  font-weight: 800;
-  background: red;
-  padding: 5px 10px;
-  border-radius: 100%;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
 }
 
-@media (max-width:375px){
-  .container{
-    max-width: 375px;
-    padding: 30px;
-  }
-  .user_info {
+.user_info li h3 {
+    overflow-y: auto;
+}
+
+.user_info .user_cardTop {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
-  }
+    justify-content: space-between;
+}
+
+.status {
+    text-transform: capitalize;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.user_id {
+    font-weight: 800;
+    background: red;
+    padding: 7px 10px;
+    border-radius: 50%;
+    color: white;
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 375px;
+        padding: 20px;
+    }
+    .user_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
 }
